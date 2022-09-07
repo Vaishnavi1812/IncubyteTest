@@ -30,15 +30,15 @@ class StringCalculatorTest {
 	}
 
 	@Test()
-	public void SampleTestCasePassingNegativeNumber() {
+	public void SampleTestCasePassingMultipleNegativeNumbers() {
 		RuntimeException exception = null;
 		try {
-			StringCalculator.add("1,4,-8,7");
+			StringCalculator.add("1,4,-8,7,-9,0");
 		} catch (RuntimeException e) {
 			exception = e;
 		}
 		Assertions.assertNotNull(exception);
-		Assertions.assertEquals("Negatives not allowed: 8", exception.getMessage());
+		Assertions.assertEquals("Negatives not allowed: [-8, -9]", exception.getMessage());
 	}
 
 }
