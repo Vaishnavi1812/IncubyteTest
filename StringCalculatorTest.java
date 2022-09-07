@@ -41,4 +41,8 @@ class StringCalculatorTest {
 		Assertions.assertEquals("Negatives not allowed: [-8, -9]", exception.getMessage());
 	}
 
+	@Test
+	public void SampleTestCasePassingNumbersGreaterThan1000() {
+		Assertions.assertEquals(2 + 1001, StringCalculator.add("2,1001"));
+	}
 }

@@ -25,7 +25,9 @@ public class StringCalculator {
 			} else {
 				if (num != "") {
 					Integer integerNum = Integer.parseInt(num);
-					numbersFromString.add(integerNum);
+					if (integerNum <= 1000) {
+						numbersFromString.add(integerNum);
+					}
 					num = "";
 				}
 			}
