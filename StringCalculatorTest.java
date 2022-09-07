@@ -29,4 +29,16 @@ class StringCalculatorTest {
 		Assertions.assertEquals(7, StringCalculator.add("1,2,a,c"));
 	}
 
+	@Test()
+	public void SampleTestCasePassingNegativeNumber() {
+		RuntimeException exception = null;
+		try {
+			StringCalculator.add("1,4,-8,7");
+		} catch (RuntimeException e) {
+			exception = e;
+		}
+		Assertions.assertNotNull(exception);
+		Assertions.assertEquals("Negatives not allowed: 8", exception.getMessage());
+	}
+
 }
