@@ -3,12 +3,6 @@ import org.junit.jupiter.api.Test;
 
 class StringCalculatorTest {
 
-//	@Test
-//	void test() {
-//		StringCalculator.add("0");
-//		Assertions.assertTrue(true);
-//	}
-
 	@Test
 	public void SampleTestCasePassingNull() {
 		Assertions.assertEquals(0, StringCalculator.add(""));
@@ -28,6 +22,11 @@ class StringCalculatorTest {
 	public void SampleTestCasePassingUnknownAmountOfNumbersInString() {
 		Assertions.assertEquals(220, StringCalculator
 				.add("1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10,1,2,3,4,5,6,7,8,9,10"));
+	}
+
+	@Test
+	public void SampleTestCasePassingAlphabets() {
+		Assertions.assertEquals(7, StringCalculator.add("1,2,a,c"));
 	}
 
 }
