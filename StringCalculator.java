@@ -6,7 +6,7 @@ public class StringCalculator {
 		ArrayList<Integer> numbersFromString = new ArrayList<Integer>();
 		String num = "";
 		for (int i = 0; i < numbers.length(); i++) {
-			num = "";
+			// num = ""; This line caused logical error in third testcase in previous code
 			if (numbers.charAt(i) != ',') {
 				num += numbers.charAt(i);
 			} else {
