@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 class StringCalculatorTest {
 
 	@Test
-	public void SampleTestCasePassingNull() {
+	public void SampleTestCasePassingEmptyString() {
 		Assertions.assertEquals(0, StringCalculator.add(""));
 	}
 
@@ -44,5 +44,33 @@ class StringCalculatorTest {
 	@Test
 	public void SampleTestCasePassingNumbersGreaterThan1000() {
 		Assertions.assertEquals(2 + 1001, StringCalculator.add("2,1001"));
+	}
+
+	@Test
+	public void SampleTestCasePassingSpace() {
+		Assertions.assertEquals(0, StringCalculator.add(" "));
+	}
+
+	@Test
+	public void SampleTestCasePassingNull() {
+		Assertions.assertEquals(0, StringCalculator.add(null));
+	}
+
+	@Test
+	public void SampleTestCasePassingUpperCaseAlphabet() {
+		UnsupportedOperationException exception = null;
+		try {
+			StringCalculator.add("A");
+		} catch (UnsupportedOperationException e) {
+			exception = e;
+		}
+		Assertions.assertNotNull(exception);
+		// Assertions.assertEquals(exception, UnsupportedOperationException.class);
+		Assertions.assertEquals("Only lowerCase alphabets allowed", exception.getMessage());
+	}
+
+	@Test
+	public void SampleTestCasePassingNewLineDelimiter() {
+		Assertions.assertEquals(3, StringCalculator.add("1\n2"));
 	}
 }
